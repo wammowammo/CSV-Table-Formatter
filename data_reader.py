@@ -57,6 +57,8 @@ def keepgoodlines(datatable, perRow):
 def read_data(file, args):
     reader = csv.reader(file, delimiter = args.s)
     datatable = [row for row in reader]
+    if len(datatable) == 1:
+        raise ValueError("Error: The datatable only contains one row.")
     perRow = len(datatable[0])
 
     datatable = keepgoodlines(datatable, perRow)

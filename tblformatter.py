@@ -146,4 +146,4 @@ def format_table(file, args):
             print(tabulate(datatable, headers="firstrow", tablefmt="fancy_grid"))
     
     except Exception as e:
-        sys.exit("Unable to open file!: {e}.")
+        sys.exit(f"Unable to open file!: {e}.")
