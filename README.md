@@ -2,16 +2,16 @@
 Python command line program which reads a file containing data in csv format, outputs to terminal a well formatted table
 
 ## Table of Contents
-[1. Overview](#overview)
+1. [Overview](#overview)
    * [Description](#description)
    * [Modules](#modules)
-[2. Getting Started](#getting-started)
+2. [Getting Started](#getting-started)
    * [Prerequisites](#prerequisites)
    * [Installing Required Libraries](#installing-required-libraries)
-[3. Running the Code](#running-the-code)
+3. [Running the Code](#running-the-code)
    * [Command-line Options](#command-line-options)
-[4. Usage Examples](#usage-examples)
-[5. Directory](#directory)
+4. [Usage Examples](#usage-examples)
+5. [Directory](#directory)
    * [Included Files](included-files)
    * [License](#license)
 
