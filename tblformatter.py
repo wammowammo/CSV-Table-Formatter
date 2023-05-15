@@ -53,7 +53,7 @@ def descendingsort(datatable, value):
 def ascendingsort(datatable, value):
     priority = {}
     if value not in datatable[0]:
-        print(value+" not in the datatable header")
+        print(value+" not in the datatable header, listing in default order.")
         return datatable
     else:
         columntosort = datatable[0].index(value)
