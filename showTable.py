@@ -1,15 +1,13 @@
-import argparse
 import sys
 import string
-import csv
-from tblformatter import format_table
+import tblformatter
+import os
 
 from cmdline_parser import cmdlineargs
-import pandas as pd
 
-
-def main(args):
-
+#main function that is gets run
+def main():
+    args = cmdlineargs()
     if args.s is None:
         args.s = ","
     if(type(args.s)!=str):
@@ -23,18 +21,14 @@ def main(args):
         file = args.files[0]
     else:
         sys.exit("wrong number of files provided")
+    if not os.path.exists(file):
+        sys.exit("The file '{file}' does not exist.")
+    if os.path.getsize(file) == 0:
+        sys.exit("Error: The file '{file}' is empty.")
 
-    # Open the CSV file
-    with open(file, 'r') as file:
-        # Create a CSV reader
-        reader = csv.reader(file)
+    tblformatter.format_table(file, args)
 
-        # Read and process each row in the CSV file
-        datatable = []
-        for row in reader:
-            datatable+=[row]
-        print(format_table(datatable))
 
+#run main IF this module is being called as the main function.
 if __name__ == '__main__':
-    args = cmdlineargs()
-    main(args)
+    main()
