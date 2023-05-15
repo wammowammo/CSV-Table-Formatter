@@ -1,5 +1,5 @@
 from tabulate import tabulate
-from data_reader import read_data, badlines, goodlines
+from data_reader import read_data
 import sys
 
 #for args.n

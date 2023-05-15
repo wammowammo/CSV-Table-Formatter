@@ -43,8 +43,14 @@ def keepgoodlines(datatable, perRow):
         else:
             newdatatable.append(datatable[i])
             goodlines+=1
-    print(badlines, "badline(s) discarded in the csv file selected.")
-    print(goodlines, "goodline(s) provided in the csv file selected.")
+    if(badlines==1):
+        print(badlines, "bad line discarded in the selected csv file.")
+    else:
+        print(badlines, "bad lines discarded in the selected csv file.")
+    if(goodlines==1):
+        print(goodlines, "good lines provided in the selected csv file.")
+    else:
+        print(goodlines, "good lines provided in the selected csv file.")
     return newdatatable
 
 #read the data and output it into a 2d list based off of the separator
