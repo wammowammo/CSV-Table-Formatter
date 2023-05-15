@@ -1,6 +1,7 @@
 import argparse
 import sys
 import re
+import os
 
 #parse through the commandline arguments
 def cmdlineargs():
@@ -13,6 +14,19 @@ def cmdlineargs():
             if re.match(r'.*\.csv$', argv[i]):
                 argv.insert(i, '--') 
                 break
+
+    def file_path(path):
+        if os.path.isfile(path):
+            return path
+        else:
+            raise argparse.ArgumentTypeError(f"{path} is not a valid file path")
+
+    def positive_int(n):
+        n = int(n)
+        if n > 0:
+            return n
+        else:
+            raise argparse.ArgumentTypeError(f"{n} is not a positive integer")
 
     parser = argparse.ArgumentParser()
 
@@ -35,10 +49,10 @@ def cmdlineargs():
     parser.add_argument('-m', type=str, help='Only list the rows that contain a given string')
     
     # Only display the first n number of rows
-    parser.add_argument('-n', type=int, help='Displays only the first specified number of rows')
+    parser.add_argument('-n', type=positive_int, help='Displays only the first specified number of rows')
     
     # take in the file that the user provides.
-    parser.add_argument("files", type=str, nargs='+', help="Path to input file")
+    parser.add_argument("files", type=file_path, nargs='+', help="Path to input file")
 
     # try to parse the arguments, exit otherwise
     try:
