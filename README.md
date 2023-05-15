@@ -72,45 +72,46 @@ where `[options]` are optional command-line arguments and `data_file` is the pat
 - `-n <number>`: displays only the first specified number of rows of the table
 
 ## Usage Examples
+Please visit `testfileoutput.md` for a demonstration on what all of the following output
 
-1. Display the table with default settings:
+1. Default settings:
 ```bash
-python3 showTable.py example.csv
+python3 showTable.py testfile.csv
 ```
 
-2. Use a different column separator:
+2. Specifying the column separator (-s):
 ```bash
-python3 showTable.py -s "|" example.csv
+python3 showTable.py -s "," testfile.csv
 ```
 
-3. Display only column headers:
+3. Only output the column names (-l):
 ```bash
-python3 showTable.py -l example.csv
+python3 showTable.py -l testfile.csv
 ```
 
-4. Display the two following columns:
+4. List only certain columns (-o):
 ```bash
-python3 showTable.py -o Phone Name example.csv 
+python3 showTable.py -o Name Sport testfile.csv
 ```
 
-5. Sort rows by the Name column in ascending order:
+5. Sort by ascending order (-u):
 ```bash
-python3 showTable.py -u Name example.csv
+python3 showTable.py -u Sport testfile.csv
 ```
 
-6. Sort rows by the Name column in descending order:
+6. Sort by descending order (-d):
 ```bash
-python3 showTable.py -d Name example.csv
+python3 showTable.py -d Name testfile.csv
 ```
 
-7. Filter rows based on the string "on":
+7. List only the rows containing a given element (-m):
 ```bash
-python3 showTable.py -m "on" example.csv
+python3 showTable.py -m USA testfile.csv
 ```
 
-8. Display the first 10 rows of the table:
+8. List only first n number of rows (-n):
 ```bash
-python3 showTable.py -n 10 example.csv
+python3 showTable.py -n 4 testfile.csv
 ```
 
 ## Directory

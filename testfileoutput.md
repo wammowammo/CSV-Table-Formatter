@@ -137,7 +137,39 @@ python3 showTable.py -u Sport testfile.csv
 ╘══════════╧═════════════════════╧═══════╧══════════╧══════════╧══════════════════════╧═══════════╛
 ```
 
-6. List only the rows containing a given element (-m):
+6. Sort by descending order (-d):
+```bash
+python3 showTable.py -d Name testfile.csv
+```
+
+```bash
+1 bad line discarded in the selected csv file.
+10 good lines provided in the selected csv file.
+╒══════════╤═════════════════════╤═══════╤══════════╤══════════╤══════════════════════╤═══════════╕
+│   Number │ Name                │   Age │ Height   │ Weight   │ Sport                │ Country   │
+╞══════════╪═════════════════════╪═══════╪══════════╪══════════╪══════════════════════╪═══════════╡
+│        4 │ Wammo               │    20 │ 172cm    │ 74kg     │ Electrical and Co... │ Taiwan    │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        7 │ Rafael Nadal        │    36 │ 185cm    │ 85kg     │ Tennis               │ Spain     │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        6 │ Luka Doncic         │    24 │ 201cm    │ 104kg    │ Basketball           │ Slovenia  │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        1 │ Lionel Messi        │    35 │ 170cm    │ 72kg     │ Soccer               │ Argentina │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        5 │ LeBron James        │    38 │ 206cm    │ 113kg    │ Basketball           │ USA       │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        3 │ Lamar Jackson       │    26 │ 188cm    │ 104kg    │ Football             │ USA       │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        9 │ Khabib Nurmagomedov │    34 │ 177cm    │ 70kg     │ MMA                  │ Russia    │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        8 │ Gervonta Davis      │    28 │ 166cm    │ 62kg     │ Boxing               │ USA       │
+├──────────┼─────────────────────┼───────┼──────────┼──────────┼──────────────────────┼───────────┤
+│        2 │ Erling Haaland      │    22 │ 193cm    │ 88kg     │ Soccer               │ Norway    │
+╘══════════╧═════════════════════╧═══════╧══════════╧══════════╧══════════════════════╧═══════════╛
+```
+
+
+7. List only the rows containing a given element (-m):
 
 ```bash
 python3 showTable.py -m USA testfile.csv
@@ -157,10 +189,10 @@ python3 showTable.py -m USA testfile.csv
 ╘══════════╧════════════════╧═══════╧══════════╧══════════╧════════════╧═══════════╛
 ```
 
-7. List only first n number of rows (-n):
+8. List only first n number of rows (-n):
 
 ```bash
-python3 showTable.py -m USA testfile.csv
+python3 showTable.py -n 4 testfile.csv
 ```
 
 ```bash
@@ -179,7 +211,7 @@ python3 showTable.py -m USA testfile.csv
 ╘══════════╧════════════════╧═══════╧══════════╧══════════╧══════════════════════╧═══════════╛
 ```
 
-8. Combining them together:
+9. Combining them together:
 
 ```bash
 python3 showTable.py -s "," -o Name Height Weight Sport -u Name -n 7 testfile.csv
